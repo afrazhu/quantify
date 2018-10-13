@@ -2,6 +2,7 @@ import tushare as ts
 import json
 import time
 import pandas as pd
+import sys
 from sqlalchemy import create_engine
 # ts.set_token("")
 # pro = ts.pro_api()
@@ -10,7 +11,7 @@ cons = ts.get_apis()
 with open('./share_list.json', 'r') as f:
     datas = json.load(f)
 
-startTime = '2018-09-01'
+startTime = '2018-09-07'
 endTime = time.strftime('%Y-%m-%d',time.localtime(time.time()))
 engine = create_engine('mysql+pymysql://root:123456@127.0.0.1/quantify?charset=utf8')
 for data in datas:
@@ -28,5 +29,5 @@ for data in datas:
         df.to_sql('zode_'+code, engine, if_exists='append')
         print(code + ' | ')
         time.sleep(0.01)
-
+sys.exit()
 

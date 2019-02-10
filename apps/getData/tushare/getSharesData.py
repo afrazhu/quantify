@@ -3,10 +3,14 @@ import json
 import time
 import pandas as pd
 import sys
-from sqlalchemy import create_engine
+import os
+
+sys.path.append("../../../common/")
+from Secret import secret
 
 sys.dont_write_bytecode = True
-# ts.set_token("")
+
+ts.set_token(secret.TOKEN)
 # pro = ts.pro_api()
 cons = ts.get_apis()
 # test = ts.bar('000026', conn=cons)
@@ -15,7 +19,7 @@ with open('./share_list.json', 'r') as f:
 
 startTime = '2018-09-07'
 endTime = time.strftime('%Y-%m-%d',time.localtime(time.time()))
-engine = create_engine('mysql+pymysql://root:123456@127.0.0.1/quantify?charset=utf8')
+engine = secret.ENGINE
 for data in datas:
     # ts_code = data.get('ts_code')
     code = data.get('symbol')

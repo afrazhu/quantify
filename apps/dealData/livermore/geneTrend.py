@@ -1,19 +1,18 @@
-from sqlalchemy import create_engine
 import pandas as pd
 import sys
 import json
 import time
+import os
 from function import function
-
-# common file
 sys.path.append("../../../common/")
 from Constant import const
 from Utility import utility
+from Secret import secret
 
 sys.dont_write_bytecode = True
 
 # database connect
-engine = create_engine('mysql+pymysql://root:123456@127.0.0.1/quantify?charset=utf8')
+engine = secret.ENGINE
 
 # key point
 

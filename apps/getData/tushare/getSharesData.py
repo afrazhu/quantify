@@ -4,6 +4,8 @@ import time
 import pandas as pd
 import sys
 from sqlalchemy import create_engine
+
+sys.dont_write_bytecode = True
 # ts.set_token("")
 # pro = ts.pro_api()
 cons = ts.get_apis()

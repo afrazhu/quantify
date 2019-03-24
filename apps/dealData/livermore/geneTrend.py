@@ -26,7 +26,7 @@ tables = pd.read_sql_query(tableSql, engine, params={'database':'quantify', 'tab
 
 # get code details
 for i, index in tables.iterrows():
-    # code trend path
+    # code trend
     code = index["table_name"][5:]
     trendFilePath = filePrePath + code + "/" + keyPoint + "/"
     utility.mkdir(trendFilePath)

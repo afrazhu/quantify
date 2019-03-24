@@ -24,7 +24,7 @@ const.ONE_DOWN = "oneDown"
 const.TWO_DOWN = "twoDown"
 const.THREE_DOWN = "threeDown"
 
-const.KEY_TIME = "1990-01-01"
+const.KEY_TIME = "2019-01-01"
 const.KEY_PRICE = "low"
 const.KEY_MAX = 6
 const.KEY_MIN = 3

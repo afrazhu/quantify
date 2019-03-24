@@ -9,7 +9,6 @@ from function import function
 sys.path.append("../../../common/")
 from Constant import const
 from Utility import utility
-from Secret import secret
 
 sys.dont_write_bytecode = True
 
